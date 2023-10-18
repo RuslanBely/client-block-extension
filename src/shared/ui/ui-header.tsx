@@ -11,7 +11,7 @@ export function UiHeader({
   return (
     <header
       className={clsx(
-        'flex items-center justify-center border-b border-b-slate-300 px-4 py-5',
+        'flex items-center justify-center border-b border-b-slate-300 px-4 py-5 bg-white',
         className,
       )}
     >
