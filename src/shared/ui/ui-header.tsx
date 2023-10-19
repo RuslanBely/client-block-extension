@@ -16,7 +16,7 @@ export function UiHeader({
       )}
     >
       <UiLogo></UiLogo>
-      {right}
+      <div className='flex-1'>{right}</div>
     </header>
   );
 }

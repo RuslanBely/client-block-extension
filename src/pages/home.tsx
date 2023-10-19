@@ -14,20 +14,26 @@ import { UiLink } from '@/shared/ui/ui-link';
 import { UiSpinner } from '@/shared/ui/ui-spinner';
 import { UiPageSpinner } from '@/shared/ui/ui-page-spinner';
 import { UiHeader } from '@/shared/ui/ui-header';
+import { SignOutButton } from '@/features/auth';
+import { useSessionQuery } from '@/entities/session/queries';
 
 const inter = Inter({ subsets: ['latin'] });
 
 export default function HomePage() {
-  const { data } = useQuery({
-    queryKey: ['session'],
-    queryFn: () => authControllerGetSessionInfo(),
-  });
+  const { data } = useSessionQuery();
 
   return (
     <main
       className={`flex min-h-screen flex-col items-center justify-between p-24 ${inter.className}`}
     >
-      <UiHeader right={<div>{data?.email}</div>}></UiHeader>
+      <UiHeader
+        right={
+          <div>
+            {data?.email}
+            <SignOutButton />
+          </div>
+        }
+      ></UiHeader>
       <UiButton variant="primary">Hey</UiButton>
       <UiButton variant="secondary">hey</UiButton>
       <UiButton variant="outlined">Sign Out</UiButton>

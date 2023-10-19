@@ -2,10 +2,10 @@ import { ROUTES } from '@/shared/constants/routes';
 import { UiButton } from '@/shared/ui/ui-button';
 import { UiLink } from '@/shared/ui/ui-link';
 import { UiTextField } from '@/shared/ui/ui-text-field';
-import { useSignUpForm } from './model/use-sign-up-form';
+import { useSignInForm } from './model/use-sign-in-form';
 
-export function SignUpForm() {
-  const { handleSubmit, isPending, register, errorMessage } = useSignUpForm();
+export function SignInForm() {
+  const { handleSubmit, isPending, register, errorMessage } = useSignInForm();
 
   return (
     <form className="flex flex-col gap-2" onSubmit={handleSubmit}>
@@ -21,10 +21,10 @@ export function SignUpForm() {
         }}
       />
       <UiButton disabled={isPending} variant="primary" className="mt-4">
-        Sign Up
+        Sign In
       </UiButton>
       <div className='flex justify-around pt-2'>
-      <span className='py-1 text-gray-500'>Do you have account ?</span><UiLink href={ROUTES.SIGN_IN}>Sign In</UiLink>
+      <span className='py-1 text-gray-500'>Do you have account ?</span><UiLink href={ROUTES.SIGN_UP}>Sign Up</UiLink>
       </div>
       {errorMessage && <div className='text-rose-500 text-center'>{errorMessage}</div>}
     </form>

@@ -13,8 +13,8 @@ export function UiSpinner({className}:{className:string}) {
           cy="12"
           r="9.5"
           fill="none"
-          stroke-linecap="round"
-          stroke-width="2"
+          strokeLinecap="round"
+          strokeWidth="2"
         >
           <animate
             attributeName="stroke-dasharray"
